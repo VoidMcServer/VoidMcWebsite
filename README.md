@@ -22,6 +22,6 @@ By accessing this repository, you acknowledge that this work belongs solely to t
 
 For inquiries or requests for permission, please contact the author directly.
 
-**Discord:** Pingz0
+**Discord Server:** discord.gg/FgjHgnQAjn
 
 **Email:** voidmc.info@gmail.com
