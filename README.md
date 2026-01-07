@@ -1,7 +1,9 @@
 # VOIDMC Web Project
 
 **Author:** Pingz0
+
 **Project:** VOIDMC - Anarchy Server Landing Page  
+
 **Year:** 2026
 
 ---
