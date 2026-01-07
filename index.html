@@ -1,77 +1,83 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>VOIDMC</title>
-<style>
-/* Hintergrund Gradient: Grau -> Rot */
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* vertikal zentriert */
-    align-items: center;     /* horizontal zentriert */
-    background: linear-gradient(135deg, #2b2b2b, #8b0000);
-    font-family: 'Courier New', monospace;
-    color: #fff;
-}
-
-/* Titel */
-h1 {
-    font-size: 64px;
-    margin-bottom: 40px;
-    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-    letter-spacing: 3px;
-    text-align: center;
-}
-
-/* Menü Container */
-.menu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Buttons */
-.menu button {
-    background: #111;
-    color: #fff;
-    border: 2px solid #550000;
-    padding: 16px 32px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Hover Effekt */
-.menu button:hover {
-    color: #ff5555;
-    border-color: #ff0000;
-    transform: scale(1.1) rotate(-1deg);
-    box-shadow: 0 0 15px #ff5555, 0 0 30px #ff0000;
-}
-
-/* Click Effekt */
-.menu button:active {
-    transform: scale(0.95) rotate(0deg);
-    box-shadow: 0 0 5px #ff0000;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOIDMC - Anarchy Server</title>
+    <style>
+        body { margin: 0; padding: 0; background: #0d1117; color: white; font-family: 'Segoe UI', Arial, sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: rgba(0, 0, 0, 0.4); }
+        .logo { font-size: 2.5em; font-weight: bold; color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+        .slogan { font-size: 1em; opacity: 0.8; margin-top: 5px; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; opacity: 0.8; }
+        nav a.active { text-decoration: underline; opacity: 1; }
+        .play-now-header { background: #00ffff; color: black; padding: 10px 30px; border-radius: 30px; font-weight: bold; text-decoration: none; }
+        main { display: flex; flex: 1; padding: 40px; gap: 40px; align-items: center; }
+        .left { flex: 1; }
+        .title { font-size: 4em; color: #00ffff; text-shadow: 0 0 20px #00ffff; margin: 0; }
+        .description { font-size: 1.3em; margin: 20px 0; opacity: 0.9; }
+        .play-now { background: #00ffff; color: black; padding: 15px 40px; border-radius: 30px; font-size: 1.5em; font-weight: bold; text-decoration: none; display: inline-block; margin: 20px 0; }
+        .discord { color: #00ffff; text-decoration: none; font-size: 1.2em; }
+        .tags { display: flex; gap: 15px; margin: 20px 0; }
+        .tag { background: rgba(0, 255, 255, 0.2); padding: 8px 20px; border-radius: 20px; }
+        .right { flex: 1; position: relative; }
+        .carousel { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 0 30px rgba(0, 255, 255, 0.3); }
+        .carousel img { width: 100%; display: none; }
+        .carousel img.active { display: block; }
+        .true-anarchy { position: absolute; top: 20px; right: 20px; background: yellow; color: black; padding: 10px 20px; font-weight: bold; border-radius: 10px; transform: rotate(10deg); }
+        .carousel-indicator { position: absolute; top: 20px; left: 20px; background: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 10px; }
+        .server-info { position: absolute; bottom: 20px; left: 0; right: 0; background: rgba(0, 0, 0, 0.7); padding: 20px; text-align: center; }
+        .ip { font-size: 1.8em; margin: 10px 0; font-weight: bold; }
+        .copy-btn { background: #00ffff; color: black; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+    </style>
 </head>
 <body>
+    <header>
+        <div>
+            <div class="logo">VOIDMC</div>
+            <div class="slogan">The ultimate anarchy experience</div>
+        </div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../ip/index.html">IP</a>
+            <a href="../rules/index.html">Rules</a>
+            <a href="../howtojoin/index.html">How to Join</a>
+            <a href="../server-info/index.html">Server Info</a>
+            <a href="#" class="play-now-header">Play Now</a>
+        </nav>
+    </header>
 
-<h1>VOIDMC</h1>
+    <main>
+        <div class="left">
+            <!-- Hier kommt der seiten-spezifische Inhalt rein -->
+        </div>
 
-<nav class="menu">
-  <button onclick="location.href='https://voidmcserver.github.io/VoidMcWebsite/'">HOME</button>
-  <button onclick="location.href='https://voidmcserver.github.io/VoidMcWebsite/ip/'">IP</button>
-  <button onclick="location.href='https://voidmcserver.github.io/VoidMcWebsite/rules/'">RULES</button>
-  <button onclick="location.href='https://voidmcserver.github.io/VoidMcWebsite/howtojoin/'">HOW TO JOIN</button>
-  <button onclick="location.href='https://voidmcserver.github.io/VoidMcWebsite/server-info/'">SERVER INFO</button>
-</nav>
+        <div class="right">
+            <div class="carousel">
+                <img src="https://assetsio.gnwcdn.com/ridealong_feb28_1.jpg?width=1920&quality=100&format=png&enable=upscale&auto=webp" class="active" alt="Epic anarchy pyramid base">
+                <img src="https://cdn.mos.cms.futurecdn.net/kU53KVP8WZzHzJBor8r4oY.png" alt="Massive chaos landscape">
+                <img src="https://blog.6b6t.org/content/images/2024/11/player-6b6t-minecraft-anarchy-server-spawn-sunrise-2.png" alt="Vast sunrise destruction">
+                <img src="https://www.6b6t.org/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2F6b6t%2F6b6t-gallery%2Fmain%2Fassets%2Fgallery%2F5.png&w=3840&q=75" alt="Huge anarchy structures">
 
+                <div class="true-anarchy">TRUE ANARCHY</div>
+                <div class="carousel-indicator">4/4</div>
+                <div class="server-info">
+                    <div class="ip">void.mcnation.xyz</div>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText('void.mcnation.xyz')">Copy</button>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:20px;">Scroll to explore ↓</p>
+        </div>
+    </main>
+
+    <script>
+        const images = document.querySelectorAll('.carousel img');
+        let current = 0;
+        setInterval(() => {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }, 6000);
+    </script>
 </body>
 </html>
