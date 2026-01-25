@@ -1,4 +1,3 @@
-// i18n (Çok Dilli Destek Sistemi)
 const translations = {
   en: {
     site_name: "xyverse",
@@ -90,14 +89,12 @@ const translations = {
   },
 };
 
-// Dil değiştirme fonksiyonu
 function changeLanguage(lang) {
   if (!translations[lang]) {
-    console.warn(`Language "${lang}" not found, defaulting to Turkish`);
-    lang = "tr";
+    console.warn(`Language "${lang}" not found`);
+    lang = "en";
   }
   
-  // Tüm [data-i18n] elementlerini bul ve güncelle
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
     if (translations[lang][key]) {
@@ -109,7 +106,6 @@ function changeLanguage(lang) {
   
   console.log(`Language changed to: ${lang}`);
 
-  // Dil bayrağını güncelle
   const langFlags = {
     en: "🇬🇧 EN",
   };
@@ -119,24 +115,19 @@ function changeLanguage(lang) {
     currentLangEl.textContent = langFlags[lang] || langFlags.tr;
   }
 
-  // LocalStorage'a kaydet
   localStorage.setItem("preferred_language", lang);
   
-  // HTML lang attribute güncelle
   document.documentElement.setAttribute("lang", lang);
 }
 
-// Sayfa yüklendiğinde
 document.addEventListener("DOMContentLoaded", () => {
-  // Tarayıcı dilini veya kaydedilmiş dili al
+  
   const savedLang = localStorage.getItem("preferred_language");
   const browserLang = navigator.language.split("-")[0];
   const defaultLang = savedLang || (translations[browserLang] ? browserLang : "tr");
   
-  // Başlangıç dilini ayarla
   changeLanguage(defaultLang);
   
-  // Dil dropdown click event
   document.querySelectorAll(".dropdown-item[data-lang]").forEach(item => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
@@ -145,13 +136,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (selectedLang) {
         changeLanguage(selectedLang);
         
-        // Dropdown'u kapat (Bootstrap)
         const dropdownEl = document.getElementById("langDropdown");
         const dropdown = bootstrap.Dropdown.getInstance(dropdownEl);
         if (dropdown) {
           dropdown.hide();
         } else {
-          // Dropdown'u manuel kapat
           const menu = document.querySelector('.language-menu');
           if (menu) menu.classList.remove('show');
         }
