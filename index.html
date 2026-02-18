@@ -456,12 +456,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-      // Customize these IPs as needed
-      const queueIP = ''; // Replace with your queue server IP
-      const serverIP = '173.249.17.33:29685'; // Main server IP
-      const networkIP = 'xyverse.eu'; // Replace with your network server IP
+      const serverIP = '173.249.17.33:29685';
+      const networkIP = 'xyverse.eu';
 
-      fetchPlayerCount(queueIP, 'queue-count');
       fetchPlayerCount(serverIP, 'server-count');
       fetchPlayerCount(networkIP, 'network-count');
     </script>
